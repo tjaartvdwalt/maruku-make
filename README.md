@@ -8,11 +8,11 @@ I love Markdown. I love that it can be rendered as a professional looking docume
 
 One shortcoming of Markdown is its inability to render mathematical formulas. You have a couple of options to solve this problem:
 
-=== Write [MathML](http://en.wikipedia.org/wiki/MathML) inside your Markdown document.
+### Write [MathML](http://en.wikipedia.org/wiki/MathML) inside your Markdown document.
 
 This is the most simple solution, since Markdown gets parsed as HTML, and MathML is HTML. Markdown won't parse any HTML blocks in the document, so you can mix Markdown and HTML. It would have been my preffered solution if it did not break the one thing I love about Markdown *human readability*. To write human readable mathematical formulas there is only one real solution: [Latex](http://en.wikibooks.org/wiki/LaTeX/Mathematics). That brings me to my second solution:
 
-=== Use a Javascript library inside your Markdown.
+### Use a Javascript library inside your Markdown.
 
 I experimented with [MathJax](http://www.mathjax.org/)
 MathJax allows you to enter mathematical formulas in Latex format, and through Javascript converts it to MathML. 
@@ -28,7 +28,7 @@ and enter your formulas using Latex formatting
 
 Aside from having to escape a few characters this pretty readable.
 
-=== Use [Maruku](https://github.com/bhollis/maruku)
+### Use [Maruku](https://github.com/bhollis/maruku)
 
 This is my preffered solution and the reason for this project. Maruku is a Ruby implementation of the Markdown parser with some extra features, including the ability to render mathemactical formulas written in Latex notation.
 
