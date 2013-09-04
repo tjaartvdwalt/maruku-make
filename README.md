@@ -14,17 +14,22 @@ This is the most simple solution, since Markdown gets parsed as HTML, and MathML
 
 ### Use a Javascript library inside your Markdown.
 
-I experimented with [MathJax](http://www.mathjax.org/)
-MathJax allows you to enter mathematical formulas in Latex format, and through Javascript converts it to MathML. 
-Again, since Markdown gets parsed to HTML you can add the javascript library to your header section.
-`<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>`
+I experimented with [MathJax](http://www.mathjax.org/). MathJax allows you to enter mathematical formulas in Latex format and with Javascript converts it to MathML. Again, since Markdown gets parsed to HTML you can add the javascript library to your header section.
+
+```
+<head>
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+```
 
 and enter your formulas using Latex formatting
-`
+
+```
 \[\begin{aligned}
 \y = \sigma(y-x)\\
 \z = x^y
-\end{aligned} \]`
+\end{aligned} \]
+```
 
 Aside from having to escape a few characters this pretty readable.
 
@@ -36,7 +41,7 @@ Dependencies
 ------------
 Maruku is implemented in Ruby, and you will need a recent version Ruby and RubyGems installed
 
-to install Maruku using RubyGems
+To install Maruku using RubyGems run:
 
 `gem install maruku`
 
@@ -76,3 +81,12 @@ Does both clean\_tmp ande clean\_output
 Shortcomings
 ------------
 Both the Javascript and Maruku solutions described above will only work for your personal documents. Online resources like Github will not render it. Theoretically the MathML option should work, although I have not tested this. A possible solution would be to output the Latex formulae as HTML using Maruku, and then copying the HTML sections into your Github Markdown.
+
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply>
+  <in/>
+  <cn type="complex-cartesian">17<sep/>29</cn>
+  <complexes/>
+</apply>
+</math>
