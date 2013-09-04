@@ -1,18 +1,18 @@
 SHELL = /bin/sh
-MARUKU = /home/tjaart/.rvm/gems/ruby-2.0.0-p195/bin/maruku
+MD_PARSER = maruku
 TMP_DIR = tmp
 MATH_ENGINE = blahtex
-OUTPUT_DIR = rendered
+OUTPUT_DIR = output
 
 %.html:	%.md create_dirs
-	cd $(TMP_DIR); $(MARUKU) --math-engine $(MATH_ENGINE) --html  -o ../$(OUTPUT_DIR)/$@ ../$<
+	cd $(TMP_DIR); $(MD_PARSER) --math-engine $(MATH_ENGINE) --html  -o ../$(OUTPUT_DIR)/$@ ../$<
 
 # For some reason the pdf option does not respect the output dir option. move the file manually.
 %.pdf: %.md create_dirs
-	cd $(TMP_DIR); $(MARUKU) --math-engine $(MATH_ENGINE) --pdf  -o ../$(OUTPUT_DIR)/$@ ../$<; mv $@ ../$(OUTPUT_DIR)
+	cd $(TMP_DIR); $(MD_PARSER) --math-engine $(MATH_ENGINE) --pdf  -o ../$(OUTPUT_DIR)/$@ ../$<; mv $@ ../$(OUTPUT_DIR)
 
 %.tex: %.md create_dirs
-	cd $(TMP_DIR); $(MARUKU) --math-engine $(MATH_ENGINE) --tex  -o ../$(OUTPUT_DIR)/$@ ../$<
+	cd $(TMP_DIR); $(MD_PARSER) --math-engine $(MATH_ENGINE) --tex  -o ../$(OUTPUT_DIR)/$@ ../$<
 
 create_dirs:
 	mkdir -p $(TMP_DIR)
