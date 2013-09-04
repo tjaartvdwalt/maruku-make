@@ -83,10 +83,39 @@ Shortcomings
 Both the Javascript and Maruku solutions described above will only work for your personal documents. Online resources like Github will not render it. Theoretically the MathML option should work, although I have not tested this. A possible solution would be to output the Latex formulae as HTML using Maruku, and then copying the HTML sections into your Github Markdown.
 
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<apply>
-  <in/>
-  <cn type="complex-cartesian">17<sep/>29</cn>
-  <complexes/>
-</apply>
+<math mode="display" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>x</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mo form="prefix">&#x2212;<!-- − --></mo>
+        <mi>b</mi>
+        <mo>&#x00B1;<!-- &PlusMinus; --></mo>
+        <msqrt>
+          <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>&#x2212;<!-- − --></mo>
+          <mn>4</mn>
+          <mo>&#x2062;<!-- &InvisibleTimes; --></mo>
+          <mi>a</mi>
+          <mo>&#x2062;<!-- &InvisibleTimes; --></mo>
+          <mi>c</mi>
+        </msqrt>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
+        <mo>&#x2062;<!-- &InvisibleTimes; --></mo>
+        <mi>a</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+  <annotation encoding="TeX">
+     x=\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+  </annotation>
+  <annotation encoding="StarMath 5.0">
+     x={-b plusminus sqrt {b^2 - 4 ac}} over {2 a}
+  </annotation>
 </math>
